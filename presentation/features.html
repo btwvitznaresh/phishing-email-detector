@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #EAE8FD;
+            color: #2D2861;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+            padding: 62px 78px;
+        }
+        .slide-container:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(to right, transparent 0, transparent calc(8.333% - 1px), rgba(45, 40, 97, 0.1) calc(8.333% - 1px), rgba(45, 40, 97, 0.1) 8.333%);
+            pointer-events: none;
+        }
+        h1 {
+            font: 600 38px monospace;
+            color: #1A1549;
+            margin: 0 0 10px;
+            position: relative;
+            letter-spacing: -1px;
+        }
+        .subtitle {
+            font: 400 20px Arial;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+        .feature-box {
+            border: 2px solid #1A1549;
+            min-height: 420px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .feature-box h2 {
+            font: 600 22px monospace;
+            color: #1A1549;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .feature-box h2:before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #FFD700;
+            margin-right: 12px;
+        }
+        .feature-list {
+            list-style: none;
+        }
+        .feature-item {
+            padding-top: 16px;
+            border-top: 1px dashed rgba(45, 40, 97, 0.3);
+            margin-top: 16px;
+            font-size: 17px;
+            line-height: 1.4;
+        }
+        .feature-item:first-child {
+            border-top: none;
+            margin-top: 0;
+            padding-top: 0;
+        }
+        .feature-item strong {
+            display: block;
+            font: 600 15px monospace;
+            color: #1A1549;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+        .footer-note {
+            position: absolute;
+            bottom: 40px;
+            left: 78px;
+            font: 600 14px monospace;
+            color: #1A1549;
+            background: #FFD700;
+            padding: 4px 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1>03 / FEATURE ENGINEERING</h1>
+        <p class="subtitle">Multi-modal signal extraction combining lexical patterns and structural heuristics.</p>
+        
+        <div class="grid-layout">
+            <div class="feature-box">
+                <h2>TEXTUAL SIGNALS</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <strong>Word TF-IDF</strong>
+                        Captures vocabulary, domain-specific terms, and common phishing keywords.
+                    </div>
+                    <div class="feature-item">
+                        <strong>Character TF-IDF</strong>
+                        Detects misspellings, character-level obfuscation, and script variations.
+                    </div>
+                    <div class="feature-item">
+                        <strong>N-Gram Range</strong>
+                        Captures local context and multi-word phrases (e.g., "verify account").
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feature-box">
+                <h2>URL HEURISTICS</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <strong>Host Analysis</strong>
+                        Identifies IP-address hosts and known URL shortener services.
+                    </div>
+                    <div class="feature-item">
+                        <strong>Link Density</strong>
+                        Measures URL count and total character length of embedded links.
+                    </div>
+                    <div class="feature-item">
+                        <strong>Suspicious Terms</strong>
+                        Flags keywords like "login", "verify", and "secure" within URL strings.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feature-box">
+                <h2>STRUCTURE & TONE</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <strong>HTML Markers</strong>
+                        Detects embedded HTML tags, anchor links, and href attributes.
+                    </div>
+                    <div class="feature-item">
+                        <strong>Urgency Cues</strong>
+                        Counts exclamation marks, currency symbols, and time-sensitive language.
+                    </div>
+                    <div class="feature-item">
+                        <strong>Case & Digits</strong>
+                        Analyzes uppercase ratios and digit density to identify spam-like patterns.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-note">TOTAL CONCATENATED FEATURES: ~12,000 DIMENSIONS</div>
+    </div>
+</body>
+</html>

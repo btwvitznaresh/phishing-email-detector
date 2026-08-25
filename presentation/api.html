@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #EAE8FD;
+            color: #2D2861;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+            padding-top: 62px;
+        }
+        .slide-container:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(to right, transparent 0, transparent calc(8.333% - 1px), rgba(45, 40, 97, 0.15) calc(8.333% - 1px), rgba(45, 40, 97, 0.15) 8.333%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            padding-left: 78px;
+            padding-right: 78px;
+        }
+        h1 {
+            font: 600 38px monospace;
+            color: #1A1549;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 22px;
+        }
+        .left-col {
+            grid-column: span 7;
+        }
+        .right-col {
+            grid-column: span 5;
+        }
+        .box {
+            border: 2px solid #1A1549;
+            padding-top: 24px;
+            padding-left: 24px;
+            padding-right: 24px;
+            margin-bottom: 22px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .box-header {
+            font: 600 18px monospace;
+            background: #FFD700;
+            color: #1A1549;
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 20px;
+        }
+        .endpoint-list {
+            list-style: none;
+        }
+        .endpoint-item {
+            border-top: 1px solid #2D2861;
+            padding-top: 16px;
+            margin-bottom: 16px;
+        }
+        .endpoint-item strong {
+            font: 600 16px monospace;
+            color: #1A1549;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .code-block {
+            background: #1A1549;
+            color: #EAE8FD;
+            padding-top: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
+            font-family: monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            border: 2px solid #FFD700;
+            min-height: 100px;
+        }
+        .label-gold {
+            color: #FFD700;
+            font-weight: 600;
+        }
+        .footer-note {
+            margin-top: 20px;
+            font: 400 14px monospace;
+            border-top: 2px solid #2D2861;
+            padding-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-wrapper">
+            <h1>05 / Real-Time FastAPI Service</h1>
+            <div class="grid-layout">
+                <div class="left-col">
+                    <div class="box" style="min-height: 480px;">
+                        <span class="box-header">API ARCHITECTURE</span>
+                        <ul class="endpoint-list">
+                            <li class="endpoint-item">
+                                <strong>GET /health</strong>
+                                Verifies model artifact availability and system readiness.
+                            </li>
+                            <li class="endpoint-item">
+                                <strong>POST /scan</strong>
+                                Primary inference endpoint. Accepts raw email text via JSON.
+                            </li>
+                            <li class="endpoint-item">
+                                <strong>PYDANTIC VALIDATION</strong>
+                                Enforces schema integrity and bounded input (max 200k chars).
+                            </li>
+                            <li class="endpoint-item">
+                                <strong>OPENAPI / SWAGGER</strong>
+                                Interactive documentation automatically served at <span class="label-gold">/docs</span>.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-col">
+                    <div class="box" style="min-height: 200px;">
+                        <span class="box-header">DEPLOYMENT</span>
+                        <div class="code-block">
+                            uvicorn api:app \<br>
+                            &nbsp;&nbsp;--host 0.0.0.0 \<br>
+                            &nbsp;&nbsp;--port 8000
+                        </div>
+                    </div>
+                    <div class="box" style="min-height: 258px;">
+                        <span class="box-header">RESPONSE SCHEMA</span>
+                        <div class="code-block">
+                            {<br>
+                            &nbsp;&nbsp;"label": "Phishing",<br>
+                            &nbsp;&nbsp;"confidence": 0.9329,<br>
+                            &nbsp;&nbsp;"phishing_prob": 0.9329,<br>
+                            &nbsp;&nbsp;"model": "tfidf-lr-v1"<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-note">
+                FASTAPI 0.115+ &nbsp; • &nbsp; UVICORN ASGI &nbsp; • &nbsp; PRODUCTION-READY SCHEMA
+            </div>
+        </div>
+    </div>
+</body>
+</html>

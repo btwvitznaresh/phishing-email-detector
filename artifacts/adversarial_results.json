@@ -1,0 +1,70 @@
+{
+  "cases": [
+    {
+      "name": "homograph-paypal",
+      "expected": "Phishing",
+      "text": "Security alert: verify your PayPal account at https://раypal.example.invalid/login now.",
+      "prediction": "Phishing",
+      "confidence": 0.8922758217329742,
+      "correct": true
+    },
+    {
+      "name": "zero-width-login",
+      "expected": "Phishing",
+      "text": "Your account will be suspended. Please l​og​in at https://secure-login.example.invalid and confirm your password.",
+      "prediction": "Phishing",
+      "confidence": 0.787389713877391,
+      "correct": true
+    },
+    {
+      "name": "defanged-url",
+      "expected": "Phishing",
+      "text": "Urgent invoice. Open hxxp://secure-login[.]example[.]invalid/verify and send your account details.",
+      "prediction": "Phishing",
+      "confidence": 0.8793395499327717,
+      "correct": true
+    },
+    {
+      "name": "ip-url",
+      "expected": "Phishing",
+      "text": "Microsoft 365 password expires today. Click http://192.0.2.10/office/verify immediately.",
+      "prediction": "Phishing",
+      "confidence": 0.9011054698693443,
+      "correct": true
+    },
+    {
+      "name": "shortened-url",
+      "expected": "Phishing",
+      "text": "You won a prize. Confirm your bank details now: https://bit.ly/example-test",
+      "prediction": "Phishing",
+      "confidence": 0.8925255029261255,
+      "correct": true
+    },
+    {
+      "name": "html-link",
+      "expected": "Phishing",
+      "text": "<html><a href='https://account.example.invalid'>Click here</a> to verify your account immediately.</html>",
+      "prediction": "Phishing",
+      "confidence": 0.9666183048952511,
+      "correct": true
+    },
+    {
+      "name": "benign-meeting",
+      "expected": "Safe",
+      "text": "Hi team, the project meeting is tomorrow at 3 PM. Please review the agenda and reply with comments.",
+      "prediction": "Safe",
+      "confidence": 0.8858317723488347,
+      "correct": true
+    },
+    {
+      "name": "benign-newsletter",
+      "expected": "Safe",
+      "text": "This month’s library newsletter includes opening hours and upcoming public events. No response is required.",
+      "prediction": "Phishing",
+      "confidence": 0.6419499611567631,
+      "correct": false
+    }
+  ],
+  "accuracy": 0.875,
+  "note": "Adversarial set is hand-curated and diagnostic, not a statistically representative benchmark."
+}

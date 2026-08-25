@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "title": "Phishing Email Detection Model",
+    "created": 1787669974.101,
+    "last_updated": 1787670225.444,
+    "total_slides": 8
+  },
+  "slides": [
+    {
+      "id": "title",
+      "state": "edited",
+      "pageNum": 1
+    },
+    {
+      "id": "objective",
+      "state": "edited",
+      "pageNum": 2
+    },
+    {
+      "id": "pipeline",
+      "state": "edited",
+      "pageNum": 3
+    },
+    {
+      "id": "features",
+      "state": "edited",
+      "pageNum": 4
+    },
+    {
+      "id": "performance",
+      "state": "edited",
+      "pageNum": 5
+    },
+    {
+      "id": "api",
+      "state": "edited",
+      "pageNum": 6
+    },
+    {
+      "id": "adversarial",
+      "state": "edited",
+      "pageNum": 7
+    },
+    {
+      "id": "next_steps",
+      "state": "edited",
+      "pageNum": 8
+    }
+  ],
+  "outline": [
+    {
+      "id": "title",
+      "title": "Phishing Email Detection Model",
+      "summary": "Design, performance, and real-time deployment overview."
+    },
+    {
+      "id": "objective",
+      "title": "Problem and Objective",
+      "summary": "Detection objective and operational framing."
+    },
+    {
+      "id": "pipeline",
+      "title": "Data and Modeling Pipeline",
+      "summary": "Dataset, split, feature blocks, classifier, and artifact flow."
+    },
+    {
+      "id": "features",
+      "title": "Feature Engineering",
+      "summary": "Text, URL, and structural signals used by the model."
+    },
+    {
+      "id": "performance",
+      "title": "Benchmark Performance",
+      "summary": "Held-out accuracy, class metrics, and confusion matrix.",
+      "image_plan": "/home/ubuntu/phishing_email_detector/artifacts/confusion_matrix.png - Confusion matrix plot matching the slide content 'artifacts/confusion_matrix.png' and performance metrics"
+    },
+    {
+      "id": "api",
+      "title": "Real-Time FastAPI Service",
+      "summary": "Endpoints, validation, response, and local deployment command."
+    },
+    {
+      "id": "adversarial",
+      "title": "Adversarial Robustness Probe",
+      "summary": "Homograph and URL-obfuscation tests with observed results."
+    },
+    {
+      "id": "next_steps",
+      "title": "Deployment and Next Steps",
+      "summary": "Security, monitoring, validation, and future enhancements."
+    }
+  ]
+}

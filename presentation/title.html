@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
+*{box-sizing:border-box} body{margin:0}
+.slide-container{width:1280px;min-height:720px;background:#EAE8FD;color:#2D2861;font-family:Arial,sans-serif;padding:72px 60px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:22px;position:relative;overflow:hidden}
+.slide-container:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to right,transparent 0,transparent calc(8.333% - 1px),rgba(45,40,97,.16) calc(8.333% - 1px),rgba(45,40,97,.16) 8.333%);pointer-events:none}
+.title-block{grid-column:1 / span 8;align-self:center;position:relative}
+.eyebrow{font:600 18px monospace;letter-spacing:3px;color:#2D2861;margin-bottom:28px}
+.title{font:600 64px/1.02 monospace;color:#1A1549;letter-spacing:-3px;margin:0 0 18px}
+.subtitle{font-size:25px;line-height:1.35;max-width:580px;margin:0}
+.marker{display:inline-block;width:58px;height:12px;background:#FFD700;margin-right:14px;vertical-align:middle}
+.side{grid-column:10 / span 3;align-self:start;border:2px solid #1A1549;padding:14px;position:relative}
+.side h2{font:600 20px monospace;color:#1A1549;margin:0 0 12px}
+.line{height:10px;background:#2D2861;margin:10px 0}
+.line.gold{background:#FFD700;width:72%}
+.line.short{width:48%}
+.foot{position:absolute;bottom:24px;left:60px;font:400 15px monospace;color:#2D2861}
+</style></head><body><div class="slide-container"><section class="title-block"><div class="eyebrow"><span class="marker"></span>SECURITY ML / SYSTEM DESIGN</div><h1 class="title">Phishing Email<br>Detection Model</h1><p class="subtitle">A Scikit-learn classifier with URL-aware features, adversarial probes, and a FastAPI real-time serving layer.</p></section><aside class="side"><h2>MODEL STATUS</h2><div class="line"></div><div class="line gold"></div><div class="line short"></div><p style="font:400 15px monospace;margin-top:18px">96.25% held-out accuracy<br>7/8 adversarial cases</p></aside><div class="foot">DESIGN • PERFORMANCE • DEPLOYMENT</div></div></body></html>

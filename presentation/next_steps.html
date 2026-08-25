@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #EAE8FD;
+            color: #2D2861;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+            padding-top: 62px;
+            padding-left: 78px;
+            padding-right: 78px;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 22px;
+        }
+        .slide-container:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(to right, transparent 0, transparent calc(8.333% - 1px), rgba(45, 40, 97, 0.15) calc(8.333% - 1px), rgba(45, 40, 97, 0.15) 8.333%);
+            pointer-events: none;
+        }
+        h1 {
+            grid-column: 1 / 13;
+            font: 600 38px monospace;
+            color: #1A1549;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .main-content {
+            grid-column: 1 / 8;
+            border: 2px solid #1A1549;
+            padding-top: 28px;
+            padding-left: 28px;
+            padding-right: 28px;
+            background: rgba(255, 255, 255, 0.3);
+            min-height: 460px;
+        }
+        .main-content h2 {
+            font: 600 22px monospace;
+            color: #1A1549;
+            margin-bottom: 24px;
+        }
+        .step-item {
+            margin-bottom: 24px;
+            padding-top: 16px;
+            border-top: 1px dashed #2D2861;
+        }
+        .step-item:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+        .step-item strong {
+            font: 600 16px monospace;
+            color: #1A1549;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .side-panel {
+            grid-column: 9 / 13;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+        .accent-box {
+            background: #1A1549;
+            color: #FFD700;
+            padding-top: 24px;
+            padding-left: 24px;
+            padding-right: 24px;
+            border: 2px solid #FFD700;
+            min-height: 220px;
+        }
+        .accent-box h3 {
+            font: 600 18px monospace;
+            margin-bottom: 16px;
+        }
+        .accent-box ul {
+            list-style: none;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .gold-block {
+            background: #FFD700;
+            height: 218px;
+            border: 2px solid #1A1549;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font: 600 24px monospace;
+            color: #1A1549;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .footer {
+            grid-column: 1 / 13;
+            margin-top: 20px;
+            font: 400 14px monospace;
+            border-top: 2px solid #2D2861;
+            padding-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1>07 / DEPLOYMENT & NEXT STEPS</h1>
+        
+        <section class="main-content">
+            <h2>PRODUCTION READINESS</h2>
+            <div class="step-item">
+                <strong>SECURITY HARDENING</strong>
+                Deploy behind TLS and mandatory authentication. Load only trusted, version-pinned artifacts (joblib security).
+            </div>
+            <div class="step-item">
+                <strong>OPERATIONAL MONITORING</strong>
+                Implement rate limiting and request logging (excluding raw bodies). Monitor for concept drift and false positive spikes.
+            </div>
+            <div class="step-item">
+                <strong>VALIDATION STRATEGY</strong>
+                Add time-based and organization-specific validation sets. Integrate human-in-the-loop for low-confidence scores.
+            </div>
+        </section>
+
+        <aside class="side-panel">
+            <div class="accent-box">
+                <h3>FUTURE ENHANCEMENTS</h3>
+                <ul>
+                    <li>• Unicode script/confusable analysis</li>
+                    <li>• URL canonicalization & reputation</li>
+                    <li>• Sandbox redirect resolution</li>
+                    <li>• Email header/SPF/DKIM signals</li>
+                </ul>
+            </div>
+            <div class="gold-block">
+                SYSTEM<br>COMPLETE
+            </div>
+        </aside>
+
+        <div class="footer">
+            PHISHING DETECTION SYSTEM V1.0 • DESIGNED BY MANUS AI • AUGUST 2026
+        </div>
+    </div>
+</body>
+</html>
